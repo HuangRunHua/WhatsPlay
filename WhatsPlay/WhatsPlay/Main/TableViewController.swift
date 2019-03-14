@@ -55,6 +55,9 @@ class TableViewController: UITableViewController, UICollectionViewDelegate, UICo
     // 第二组需要自定义cell，这里使用XIB来完成
     let nib = UINib(nibName: "BookTableViewCell", bundle: nil)
     
+    // 第3组也需要自定义cell，这里使用XIB来完成
+    let featuredNib = UINib(nibName: "FeaturedTableViewCell", bundle: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // 必须带上这两句话才有数据
@@ -63,6 +66,8 @@ class TableViewController: UITableViewController, UICollectionViewDelegate, UICo
         
         // 需要用代码注册Nib
         self.tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
+        self.tableView.register(featuredNib, forCellReuseIdentifier: "FeaturedCell")
+        
     }
     
     
@@ -74,8 +79,16 @@ class TableViewController: UITableViewController, UICollectionViewDelegate, UICo
      */
     
     // 这是我将要在 tableViewCell 里面展示给大家的内容
-    private var books = [Book(classText: "友谊", title: "塔克的郊外", subTitle: "一只蟋蟀、一只老鼠和一只猫咪的\n童话连续剧。", image: UIImage(named: "5")), Book(classText: "青春", title: "会飞的教室", subTitle: "一部由孩子们自编自演的圣诞情景剧，\n一部浓缩的校园风景录。", image: UIImage(named: "6")), Book(classText: "浪漫", title: "银河铁道之夜", subTitle: "一部未完成的作品\n银河深处，便是那幸福的天堂吗？", image: UIImage(named: "7")), Book(classText: "生命", title: "夏洛的网", subTitle: "世界上有两种人，一种人读过\n《夏洛的网》，另一种人正准备读。", image: UIImage(named: "8")), Book(classText: "神秘", title: "柳林风声", subTitle: "一个适合坐在火炉边，大家一起听的\n故事。", image: UIImage(named: "9"))]
+    private var books = [Book(classText: "友谊", title: "塔克的郊外", subTitle: "一只蟋蟀、一只老鼠和一只猫咪的\n童话连续剧。", image: UIImage(named: "5")), Book(classText: "青春", title: "会飞的教室", subTitle: "一部由孩子们自编自演的圣诞情景剧，\n一部浓缩的校园风景录。", image: UIImage(named: "6")), Book(classText: "浪漫", title: "银河铁道之夜", subTitle: "一部未完成的作品\n银河深处，便是那幸福的天堂吗？", image: UIImage(named: "7")), Book(classText: "生命", title: "夏洛的网", subTitle: "世界上有两种人，一种人读过\n《夏洛的网》，另一种人正准备读。", image: UIImage(named: "8")), Book(classText: "冒险", title: "柳林风声", subTitle: "一个适合坐在火炉边，大家一起听的\n故事。", image: UIImage(named: "9"))]
 
+    
+    /**
+     * 这是第三部分
+     * 在这一部分要实现简单的tableViewCell功能
+     * 每一个 cell 由一张图片，一个标题构成
+     */
+    private var featuredBooks = [Featured(image: UIImage(named: "10"), title: "小王子"), Featured(image: UIImage(named: "11"), title: "爱德华的奇妙之旅"), Featured(image: UIImage(named: "12"), title: "窗边的小豆豆"), Featured(image: UIImage(named: "13"), title: "梦书之城"), Featured(image: UIImage(named: "14"), title: "天蓝色的彼岸"), Featured(image: UIImage(named: "15"), title: "看得见风的男孩")]
+    
 
     // 以下代理方法必须实现
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -87,12 +100,24 @@ class TableViewController: UITableViewController, UICollectionViewDelegate, UICo
             cell?.backgroundImage.image = books[indexPath.row].image
             return cell!
         }
+        
+        if indexPath.section == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FeaturedCell") as? FeaturedTableViewCell
+            cell?.bookImage.image = featuredBooks[indexPath.row].image
+            cell?.bookTitle.text = featuredBooks[indexPath.row].title
+            
+            return cell!
+        }
+        
         return super.tableView(tableView, cellForRowAt: indexPath)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1 {
             return books.count //这里返回第二组的行数
+        }
+        if section == 2 {
+            return featuredBooks.count
         }
         return super.tableView(tableView, numberOfRowsInSection: section)
     }
@@ -102,6 +127,9 @@ class TableViewController: UITableViewController, UICollectionViewDelegate, UICo
         if indexPath.section == 1 {
             return super.tableView(tableView, indentationLevelForRowAt: IndexPath(row: 0, section: 1))
         }
+        if indexPath.section == 2 {
+            return super.tableView(tableView, indentationLevelForRowAt: IndexPath(row: 0, section: 2))
+        }
         return super.tableView(tableView, indentationLevelForRowAt: indexPath)
     }
     
@@ -109,8 +137,14 @@ class TableViewController: UITableViewController, UICollectionViewDelegate, UICo
         if indexPath.section == 1 {
             return 120
         }
+        if indexPath.section == 2 {
+            return 80
+        }
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
+    
+    
+    
     
 
 }
