@@ -11,7 +11,12 @@ import UIKit
 class TableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
-    private var images = [imageViewCollection(image: UIImage(named: "1")), imageViewCollection(image: UIImage(named: "2")), imageViewCollection(image: UIImage(named: "3"))]
+    /**
+     * 第一部分
+     * 在tableViewCell里面添加了一个collectionView，实现了三个collectionCell，每一个Cell里面有一张照片
+     */
+    
+    private var images = [imageViewCollection(image: UIImage(named: "1"), title: "狗来了", general: "精选集", subTitle: ""), imageViewCollection(image: UIImage(named: "2"), title: "芒果街上的小屋", general: "晨读",subTitle: "优美纯净的小书"), imageViewCollection(image: UIImage(named: "4"), title: "吹小号的天鹅", general: "睡前故事",subTitle: ""), imageViewCollection(image: UIImage(named: "3"), title: "时代广场的蟋蟀", general: "下午茶",subTitle: "生命之间爱和关怀的故事")]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
@@ -26,8 +31,15 @@ class TableViewController: UITableViewController, UICollectionViewDelegate, UICo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! imageViewCollectionViewCell
         
         cell.imageView.image = images[indexPath.row].image
+        cell.generalLabel.text = images[indexPath.row].general
+        cell.titleLabel.text = images[indexPath.row].title
+        cell.subTitleLabel.text = images[indexPath.row].subTitle
         
-        cell.layer.cornerRadius = 15.0
+        if images[indexPath.row].subTitle == "" {
+            cell.subTitleLabel.isHidden = true
+        }
+        
+        cell.layer.cornerRadius = 10.0
         cell.layer.masksToBounds = true
         
         return cell

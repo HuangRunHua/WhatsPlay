@@ -11,4 +11,7 @@ import UIKit
 
 struct imageViewCollection {
     var image: UIImage?
+    var title: String = ""
+    var general: String = ""
+    var subTitle: String = ""
 }
