@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04501117223A2CF400556950 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04501116223A2CF400556950 /* TableViewCell.swift */; };
+		04501119223A301200556950 /* TableViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04501118223A301200556950 /* TableViewData.swift */; };
+		0450111D223A3B2100556950 /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0450111B223A3B2100556950 /* BookTableViewCell.xib */; };
 		04C894A2223929510015B060 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C894A1223929510015B060 /* AppDelegate.swift */; };
 		04C894A7223929510015B060 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C894A5223929510015B060 /* Main.storyboard */; };
 		04C894A9223929530015B060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C894A8223929530015B060 /* Assets.xcassets */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04501116223A2CF400556950 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		04501118223A301200556950 /* TableViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewData.swift; sourceTree = "<group>"; };
+		0450111B223A3B2100556950 /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
 		04C8949E223929510015B060 /* WhatsPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C894A1223929510015B060 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04C894A6223929510015B060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +45,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0450111E223A4BA900556950 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				04C894A5223929510015B060 /* Main.storyboard */,
+				0450111B223A3B2100556950 /* BookTableViewCell.xib */,
+				04C894AA223929530015B060 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		0450111F223A4BCC00556950 /* DataStruct */ = {
+			isa = PBXGroup;
+			children = (
+				04501118223A301200556950 /* TableViewData.swift */,
+				04C894B522392C190015B060 /* imageCollection.swift */,
+			);
+			path = DataStruct;
+			sourceTree = "<group>";
+		};
+		04501120223A4C0800556950 /* BookTableView */ = {
+			isa = PBXGroup;
+			children = (
+				04501116223A2CF400556950 /* TableViewCell.swift */,
+			);
+			path = BookTableView;
+			sourceTree = "<group>";
+		};
+		04501121223A4C3700556950 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				04C894B322392BBD0015B060 /* imageViewCollectionViewCell.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		04501122223A4C4B00556950 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				04C894A1223929510015B060 /* AppDelegate.swift */,
+				04C894B922392CB00015B060 /* TableViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		04C89495223929510015B060 = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +108,12 @@
 		04C894A0223929510015B060 /* WhatsPlay */ = {
 			isa = PBXGroup;
 			children = (
-				04C894A1223929510015B060 /* AppDelegate.swift */,
-				04C894A5223929510015B060 /* Main.storyboard */,
-				04C894B922392CB00015B060 /* TableViewController.swift */,
-				04C894B522392C190015B060 /* imageCollection.swift */,
-				04C894B322392BBD0015B060 /* imageViewCollectionViewCell.swift */,
+				04501122223A4C4B00556950 /* Main */,
+				0450111F223A4BCC00556950 /* DataStruct */,
+				04501120223A4C0800556950 /* BookTableView */,
+				0450111E223A4BA900556950 /* Storyboard */,
+				04501121223A4C3700556950 /* CollectionView */,
 				04C894A8223929530015B060 /* Assets.xcassets */,
-				04C894AA223929530015B060 /* LaunchScreen.storyboard */,
 				04C894AD223929530015B060 /* Info.plist */,
 			);
 			path = WhatsPlay;
@@ -128,6 +177,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0450111D223A3B2100556950 /* BookTableViewCell.xib in Resources */,
 				04C894AC223929530015B060 /* LaunchScreen.storyboard in Resources */,
 				04C894A9223929530015B060 /* Assets.xcassets in Resources */,
 				04C894A7223929510015B060 /* Main.storyboard in Resources */,
@@ -141,8 +191,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04501117223A2CF400556950 /* TableViewCell.swift in Sources */,
 				04C894BA22392CB00015B060 /* TableViewController.swift in Sources */,
 				04C894A2223929510015B060 /* AppDelegate.swift in Sources */,
+				04501119223A301200556950 /* TableViewData.swift in Sources */,
 				04C894B422392BBD0015B060 /* imageViewCollectionViewCell.swift in Sources */,
 				04C894B622392C190015B060 /* imageCollection.swift in Sources */,
 			);
