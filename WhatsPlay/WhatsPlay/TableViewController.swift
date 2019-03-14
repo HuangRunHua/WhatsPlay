@@ -13,7 +13,8 @@ class TableViewController: UITableViewController, UICollectionViewDelegate, UICo
     
     /**
      * 第一部分
-     * 在tableViewCell里面添加了一个collectionView，实现了三个collectionCell，每一个Cell里面有一张照片
+     * 在tableViewCell里面添加了一个collectionView，实现了4个collectionCell
+     * 每一个cell里面有一个标题，副标题，背景图片以及分类标签
      */
     
     private var images = [imageViewCollection(image: UIImage(named: "1"), title: "狗来了", general: "精选集", subTitle: ""), imageViewCollection(image: UIImage(named: "2"), title: "芒果街上的小屋", general: "晨读",subTitle: "优美纯净的小书"), imageViewCollection(image: UIImage(named: "4"), title: "吹小号的天鹅", general: "睡前故事",subTitle: ""), imageViewCollection(image: UIImage(named: "3"), title: "时代广场的蟋蟀", general: "下午茶",subTitle: "生命之间爱和关怀的故事")]
