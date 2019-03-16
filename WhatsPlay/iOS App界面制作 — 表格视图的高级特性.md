@@ -1,4 +1,4 @@
-#iOS App界面制作 — 表格视图的高级特性
+# iOS App界面制作 — 表格视图的高级特性
 
 ![picture made by [Mixoo](https://itunes.apple.com/cn/app/mixoo-美图拼贴-文艺杂志拼图软件/id799442576?mt=8) and [画中画相机](https://itunes.apple.com/cn/app/画中画相机-美图p图软件与美颜美妆神器/id521922264?mt=8)](https://cdn-images-1.medium.com/max/4096/1*6NCSeTpu_2rJqBJ0xCh4Yg.jpeg)
 
