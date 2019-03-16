@@ -23,7 +23,6 @@ class TableViewController: UITableViewController, UICollectionViewDelegate, UICo
         return images.count
     }
     
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -38,6 +37,7 @@ class TableViewController: UITableViewController, UICollectionViewDelegate, UICo
         
         if images[indexPath.row].subTitle == "" {
             cell.subTitleLabel.isHidden = true
+            //cell.subTitleLabel.text = "   " // 这样就可以看到美观感
         }
         
         cell.layer.cornerRadius = 10.0

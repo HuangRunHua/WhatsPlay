@@ -69,7 +69,7 @@
                 <outlet property="subTitle" destination="AP9-kv-Lfe" id="KkZ-fl-qdO"/>
                 <outlet property="titleLabel" destination="BQJ-nH-c1P" id="TZH-U2-Bzj"/>
             </connections>
-            <point key="canvasLocation" x="52" y="48.575712143928037"/>
+            <point key="canvasLocation" x="7" y="21"/>
         </tableViewCell>
     </objects>
 </document>
