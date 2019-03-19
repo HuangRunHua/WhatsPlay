@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class TableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -51,6 +52,28 @@ class TableViewController: UITableViewController, UICollectionViewDelegate, UICo
             collectionView.backgroundColor = .clear
         }
     }
+    
+    /* 点击按钮以后出现网页 */
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            let privacyPolicyVC = SFSafariViewController(url: URL(string: "https://www.apple.com/cn/")!)
+            present(privacyPolicyVC, animated: true,completion: nil)
+        case 1:
+            let privacyPolicyVC = SFSafariViewController(url: URL(string: "https://leetcode-cn.com")!)
+            present(privacyPolicyVC, animated: true,completion: nil)
+        case 2:
+            let privacyPolicyVC = SFSafariViewController(url: URL(string: "https://developer.apple.com/cn/")!)
+            present(privacyPolicyVC, animated: true,completion: nil)
+        case 3:
+            let privacyPolicyVC = SFSafariViewController(url: URL(string: "https://unsplash.com")!)
+            present(privacyPolicyVC, animated: true,completion: nil)
+        default:
+            break
+        }
+    }
+    
+    
     
     // 第二组需要自定义cell，这里使用XIB来完成
     let nib = UINib(nibName: "BookTableViewCell", bundle: nil)
